@@ -33,7 +33,7 @@ def handle_put_request(filename, body):
         
         return "HTTP/1.1 200 OK\n\n"
     
-    except FileNotFoundError:
+    except:
         # Caso ocorra algum erro ao criar/sobrescrever um arquivo, gera uma resposta de erro
         return "HTTP/1.1 500 INTERNAL ERROR\n\n<h1>ERROR 500!<br>INTERNAL ERROR!</h1>"
 
@@ -44,6 +44,9 @@ def handle_get_request(filename):
     if filename == "/":
         filename = "/index.html"
 
+    if filename == "/ipsum":
+        filename = "/ipsum.html"
+
     # Try e except para tratamento de erro
     try:
         # Abrir o arquivo e enviar para o cliente
@@ -53,7 +56,7 @@ def handle_get_request(filename):
         
         return "HTTP/1.1 200 OK\n\n" + content
     
-    except FileNotFoundError:
+    except:
         # Caso o arquivo solicitado não exista no servidor, gera uma resposta de erro
         return "HTTP/1.1 404 NOT FOUND\n\n<h1>ERROR 404!<br>File Not Found!</h1>"
 
