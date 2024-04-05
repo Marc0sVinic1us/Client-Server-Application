@@ -27,9 +27,8 @@ def handle_put_request(filename, body):
     # Try e except para tratamento de erro
     try:
         # Escreve o arquivo com o corpo da requisição
-        fin = open("htdocs" + filename, "wb")
-        fin.write(body.encode())
-        fin.close()
+        with open("htdocs" + filename, "wb", encoding="utf-8") as file:
+            file.write(body.encode())
         
         return "HTTP/1.1 200 OK\n\n"
     
@@ -50,9 +49,8 @@ def handle_get_request(filename):
     # Try e except para tratamento de erro
     try:
         # Abrir o arquivo e enviar para o cliente
-        fin = open("htdocs" + filename)
-        content = fin.read()
-        fin.close()
+        with open("htdocs" + filename, "r", encoding="utf-8") as file:
+            content = file.read()
         
         return "HTTP/1.1 200 OK\n\n" + content
     

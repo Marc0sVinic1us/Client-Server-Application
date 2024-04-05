@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppRC- Home</title>
+    <title>AppRC - Documentacao</title>
 </head>
     <body>
         <div class="content-painel">
-            <h1>Olá, mundo!</h1>
-            <p>Bem vindo a página inicial do meu website da disciplina de <strong>Redes de Computadores</strong> da UFABC.</p>
+            <h1>Documentação</h1>
+            <section>
+                <ul>
+                    <li><strong>Descrição:</strong> A aplicação consiste em um sistema de gerenciamento de arquivos simples, com uma interface de usuário construída utilizando páginas HTML e estilizada com CSS para melhorar a experiência do usuário.</li>
+                    <li><strong>Servidor HTTP:</strong> Implementa um servidor HTTP em Python, utilizando a biblioteca "socket", que é capaz de interpretar os métodos HTTP GET e PUT para realizar operações de leitura e inserção de arquivos.</li>
+                    <li><strong>Funcionalidades:</strong> Os usuários podem interagir com a aplicação por meio de uma interface web intuitiva, que permite visualizar arquivos presentes no servidor e adicionar novos.</li>
+                    <li><strong>Operações suportadas:</strong>
+                        <br><strong>GET:</strong> Utilizado para recuperar os arquivos existentes no servidor.
+                        <br><strong>PUT:</strong> Permite a inserção de novos arquivos no servidor.
+                    </li>
+                    <li><strong>Benefícios:</strong> Essa abordagem oferece uma maneira eficiente e flexível de interagir com os dados armazenados no servidor, proporcionando uma experiência amigável e funcional para os usuários.</li>
+                </ul>
+            </section>
             <div class="links-container">
-                <a href="docs.html">Documentação</a>
-                <a href="dev.html">Desenvolvedor</a>
+                <a href="index.html">Voltar ao Início</a>
             </div>    
         </div>
     </body>
@@ -46,8 +56,9 @@
             flex-direction: column;
             
             width: 85%;
-            max-width: 600px;
-            height: 60%;
+            max-width: 900px;
+            height: auto;
+            padding-bottom: 8vh;
             padding: 20px;
             
             border-radius: 10px;
@@ -61,10 +72,24 @@
             font-size: 35px;
         }
 
-        .content-painel p {
-            text-align: center;
-            width: 80%;
-            margin-top: 20px;
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 90%;
+            height: auto;
+            gap: 20px;
+            line-height: 25px;
+            padding: 10px;
+            margin-top: 8vh;
+            padding: 2vh 5%;
+            border: solid 2.5px #c2c2c2;
+            border-radius: 10px;
+            background-color: #ffffffb9;
+        }
+
+        section li {
+            margin-top: 10px;
         }
 
         .links-container {
@@ -83,12 +108,12 @@
             align-items: center;
             
             gap: 20px;
-            margin-top: 6vh;
-            width: 90%;
-            max-width: 400px;
+            margin-top: 2vh;
+            width: 80%;
+            max-width: 500px;
             height: auto;
-            padding: 3vh 0;
-            border-radius: 20px;
+            padding: 1vh 0;
+            border-radius: 8px;
             font-weight: bold;
             font-size: 20px;
             
