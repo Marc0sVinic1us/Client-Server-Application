@@ -24,10 +24,10 @@ def parse_request(request):
 
 def handle_put_request(filename, body):
 
-    # Try e except para tratamento de erro
+    # Tratamento de erro
     try:
         # Escreve o arquivo com o corpo da requisição
-        with open("htdocs" + filename, "wb", encoding="utf-8") as file:
+        with open("htdocs" + filename, "wb") as file:
             file.write(body.encode())
         
         return "HTTP/1.1 200 OK\n\n"
